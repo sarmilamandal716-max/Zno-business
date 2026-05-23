@@ -1,0 +1,1137 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(s){s.dataset.zone='11047247',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+<meta name="description" content="Learn business growth, startup ideas, AI tools, and marketing strategies with ZNO.">
+<meta name="keywords" content="business growth, startup, marketing, AI business">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZNO Business Growth Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --neon: #00d4ff;
+  --neon2: #0099cc;
+  --neon3: #00ffcc;
+  --dark: #020b18;
+  --dark2: #041628;
+  --dark3: #071e33;
+  --card: rgba(0,212,255,0.04);
+  --glass: rgba(0,212,255,0.08);
+  --border: rgba(0,212,255,0.2);
+  --text: #e8f4fd;
+  --muted: rgba(232,244,253,0.55);
+  --glow: 0 0 30px rgba(0,212,255,0.3);
+  --glow2: 0 0 60px rgba(0,212,255,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'Exo 2',sans-serif;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cursor{position:fixed;width:12px;height:12px;background:var(--neon);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .2s,height .2s;box-shadow:0 0 15px var(--neon),0 0 30px rgba(0,212,255,0.5)}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(0,212,255,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s ease,left .08s ease,top .08s ease}
+
+/* LOADING */
+#loader{position:fixed;inset:0;background:var(--dark);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .8s,visibility .8s}
+#loader.hidden{opacity:0;visibility:hidden}
+.loader-logo{font-family:'Orbitron',sans-serif;font-size:48px;font-weight:900;color:var(--neon);text-shadow:0 0 40px var(--neon);letter-spacing:8px;animation:pulse 1.5s ease-in-out infinite}
+.loader-bar{width:300px;height:2px;background:rgba(0,212,255,0.15);border-radius:2px;margin-top:30px;overflow:hidden}
+.loader-fill{height:100%;background:linear-gradient(90deg,var(--neon),var(--neon3));border-radius:2px;animation:loadfill 2.5s ease forwards}
+.loader-text{margin-top:16px;font-size:13px;letter-spacing:4px;color:var(--muted);text-transform:uppercase}
+@keyframes loadfill{0%{width:0}100%{width:100%}}
+@keyframes pulse{0%,100%{text-shadow:0 0 40px var(--neon),0 0 80px rgba(0,212,255,0.3)}50%{text-shadow:0 0 60px var(--neon),0 0 120px rgba(0,212,255,0.5)}}
+
+/* SCROLL PROGRESS */
+#progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--neon3));z-index:9000;width:0%;transition:width .1s;box-shadow:0 0 8px var(--neon)}
+
+/* PARTICLES */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.particle{position:absolute;background:var(--neon);border-radius:50%;opacity:0;animation:float-particle linear infinite}
+@keyframes float-particle{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.6}90%{opacity:.2}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+nav.scrolled{background:rgba(2,11,24,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:var(--glow2)}
+.nav-logo{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:900;color:var(--neon);text-shadow:0 0 20px rgba(0,212,255,0.5);letter-spacing:3px;text-decoration:none}
+.nav-links{display:flex;gap:8px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:8px 16px;border-radius:4px;transition:all .3s;font-weight:500;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:0;height:1px;background:var(--neon);transition:width .3s;box-shadow:0 0 6px var(--neon)}
+.nav-links a:hover{color:var(--neon);text-shadow:0 0 10px rgba(0,212,255,0.5)}
+.nav-links a:hover::after{width:60%}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-toggle span{width:24px;height:1.5px;background:var(--neon);display:block;transition:all .3s}
+.dark-toggle{width:44px;height:24px;border-radius:12px;background:var(--glass);border:1px solid var(--border);cursor:pointer;position:relative;transition:all .3s;flex-shrink:0}
+.dark-toggle::after{content:'☀️';position:absolute;top:50%;left:4px;transform:translateY(-50%);font-size:12px;transition:all .3s}
+body.light-mode .dark-toggle::after{content:'🌙';left:22px}
+.music-btn{width:36px;height:36px;border-radius:50%;background:var(--glass);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s;color:var(--neon)}
+.music-btn:hover{background:var(--neon);color:var(--dark);box-shadow:var(--glow)}
+
+/* PAGES */
+.page{display:none;min-height:100vh}
+.page.active{display:block}
+
+/* HERO */
+#home{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 40px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(0,100,150,0.25) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(0,212,255,0.06) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 20%,rgba(0,255,200,0.04) 0%,transparent 60%);animation:bgpulse 8s ease-in-out infinite}
+@keyframes bgpulse{0%,100%{opacity:1}50%{opacity:.7}}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);background-size:60px 60px;animation:gridmove 20s linear infinite}
+@keyframes gridmove{0%{background-position:0 0}100%{background-position:0 60px}}
+.hero-content{text-align:center;position:relative;z-index:2;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass);border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--neon);margin-bottom:32px;animation:fadeup .8s .3s both}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--neon);border-radius:50%;animation:blink 2s infinite;box-shadow:0 0 8px var(--neon)}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero-title{font-family:'Orbitron',sans-serif;font-size:clamp(32px,5vw,68px);font-weight:900;line-height:1.1;margin-bottom:24px;animation:fadeup .8s .5s both}
+.hero-title .line1{display:block;color:var(--text)}
+.hero-title .line2{display:block;background:linear-gradient(135deg,var(--neon),var(--neon3),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:none}
+.hero-sub{font-size:clamp(14px,2vw,18px);color:var(--muted);max-width:620px;margin:0 auto 40px;line-height:1.7;animation:fadeup .8s .7s both}
+.hero-type{color:var(--neon);font-weight:600;font-size:inherit}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeup .8s .9s both;margin-bottom:64px}
+.btn-primary{padding:14px 32px;background:var(--neon);color:var(--dark);font-family:'Exo 2',sans-serif;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;box-shadow:0 0 20px rgba(0,212,255,0.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,212,255,0.6),0 8px 30px rgba(0,0,0,0.3)}
+.btn-secondary{padding:14px 32px;background:transparent;color:var(--neon);font-family:'Exo 2',sans-serif;font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--border);border-radius:4px;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block}
+.btn-secondary:hover{background:var(--glass);border-color:var(--neon);transform:translateY(-2px);box-shadow:var(--glow)}
+.hero-stats{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;animation:fadeup .8s 1.1s both}
+.stat{text-align:center}
+.stat-num{font-family:'Orbitron',sans-serif;font-size:32px;font-weight:700;color:var(--neon);text-shadow:0 0 20px rgba(0,212,255,0.5);display:block}
+.stat-label{font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.stat-divider{width:1px;background:var(--border)}
+@keyframes fadeup{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+/* FLOATING ICONS */
+.float-icon{position:absolute;font-size:20px;opacity:.15;animation:floaticon linear infinite;pointer-events:none}
+@keyframes floaticon{0%{transform:translateY(0) rotate(0deg);opacity:.15}50%{opacity:.25}100%{transform:translateY(-30px) rotate(360deg);opacity:.15}}
+
+/* SECTION BASE */
+section{padding:100px 40px;position:relative;z-index:1}
+.section-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--neon);margin-bottom:12px;display:block}
+.section-title{font-family:'Orbitron',sans-serif;font-size:clamp(24px,4vw,42px);font-weight:700;margin-bottom:16px;line-height:1.2}
+.section-sub{color:var(--muted);font-size:16px;max-width:600px;line-height:1.7;margin-bottom:60px}
+.center{text-align:center;margin:0 auto}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* FEATURES */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 28px;position:relative;overflow:hidden;transition:all .4s;cursor:default}
+.feat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,0.08),transparent);opacity:0;transition:opacity .4s}
+.feat-card::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,212,255,0.06),transparent);transition:left .6s}
+.feat-card:hover{transform:translateY(-8px) rotateX(3deg);border-color:rgba(0,212,255,0.5);box-shadow:0 20px 60px rgba(0,0,0,0.4),var(--glow)}
+.feat-card:hover::before{opacity:1}
+.feat-card:hover::after{left:100%}
+.feat-icon{width:52px;height:52px;background:var(--glass);border:1px solid var(--border);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;transition:all .4s}
+.feat-card:hover .feat-icon{background:rgba(0,212,255,0.15);border-color:var(--neon);box-shadow:0 0 20px rgba(0,212,255,0.2);transform:scale(1.1)}
+.feat-card h3{font-family:'Orbitron',sans-serif;font-size:15px;font-weight:600;margin-bottom:10px;color:var(--text)}
+.feat-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.feat-tag{display:inline-block;margin-top:14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--neon);background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:100px;padding:4px 12px}
+
+/* TIMELINE */
+.timeline{max-width:800px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--neon),var(--neon),transparent);transform:translateX(-50%)}
+.tl-item{display:flex;justify-content:flex-end;padding-right:calc(50% + 40px);margin-bottom:60px;position:relative}
+.tl-item:nth-child(even){justify-content:flex-start;padding-right:0;padding-left:calc(50% + 40px)}
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 28px;max-width:300px;transition:all .4s;position:relative}
+.tl-card:hover{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow);transform:scale(1.02)}
+.tl-dot{position:absolute;left:50%;top:24px;width:14px;height:14px;background:var(--neon);border-radius:50%;transform:translateX(-50%);box-shadow:0 0 20px var(--neon);z-index:2;animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 10px var(--neon)}50%{box-shadow:0 0 30px var(--neon),0 0 60px rgba(0,212,255,0.3)}}
+.tl-step{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--neon);margin-bottom:8px}
+.tl-card h3{font-family:'Orbitron',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px}
+.tl-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* TESTIMONIALS */
+.testimonials-slider{max-width:900px;margin:0 auto;overflow:hidden;position:relative}
+.testimonials-track{display:flex;transition:transform .6s cubic-bezier(.25,.1,.25,1)}
+.testimonial{flex:0 0 100%;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px;text-align:center}
+.test-quote{font-size:clamp(15px,2vw,20px);line-height:1.7;color:var(--text);margin-bottom:32px;font-style:italic;position:relative}
+.test-quote::before{content:'"';font-size:80px;color:rgba(0,212,255,0.15);font-family:'Orbitron',sans-serif;position:absolute;top:-20px;left:-10px;line-height:1}
+.test-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon3));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-weight:700;font-size:18px;color:var(--dark);margin:0 auto 12px}
+.test-name{font-weight:600;font-size:15px;color:var(--text);margin-bottom:4px}
+.test-role{font-size:12px;color:var(--neon);letter-spacing:2px;text-transform:uppercase}
+.slider-dots{display:flex;gap:8px;justify-content:center;margin-top:24px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .3s}
+.dot.active{background:var(--neon);box-shadow:0 0 10px var(--neon);width:24px;border-radius:4px}
+.slider-btns{display:flex;gap:12px;justify-content:center;margin-top:16px}
+.slider-btn{width:40px;height:40px;border-radius:50%;background:var(--glass);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--neon);font-size:18px;transition:all .3s;user-select:none}
+.slider-btn:hover{background:var(--neon);color:var(--dark);box-shadow:var(--glow)}
+
+/* QUOTE CAROUSEL */
+.quote-carousel{max-width:800px;margin:0 auto;text-align:center;padding:40px;background:var(--card);border:1px solid var(--border);border-radius:16px;position:relative;overflow:hidden}
+.quote-carousel::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:conic-gradient(transparent 0deg,rgba(0,212,255,0.03) 60deg,transparent 120deg);animation:rotate-glow 8s linear infinite}
+@keyframes rotate-glow{to{transform:rotate(360deg)}}
+.quote-text{font-size:clamp(16px,2.5vw,24px);font-style:italic;color:var(--text);line-height:1.6;margin-bottom:16px;position:relative;z-index:1;transition:opacity .5s}
+.quote-author{font-size:13px;color:var(--neon);letter-spacing:3px;text-transform:uppercase;position:relative;z-index:1}
+
+/* FAQ */
+.faq-list{max-width:750px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow2)}
+.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;color:var(--text);transition:color .3s}
+.faq-q:hover,.faq-item.open .faq-q{color:var(--neon)}
+.faq-arrow{font-size:20px;transition:transform .3s;color:var(--neon);flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-a-inner{padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:200px}
+
+/* STATS/CHARTS */
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:1000px;margin:0 auto}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center;transition:all .4s}
+.chart-card:hover{border-color:rgba(0,212,255,0.5);box-shadow:var(--glow);transform:translateY(-4px)}
+.chart-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.chart-bar-wrap{height:120px;display:flex;align-items:flex-end;justify-content:center;gap:6px;margin-bottom:16px}
+.chart-bar{background:linear-gradient(to top,var(--neon),rgba(0,212,255,0.3));border-radius:3px 3px 0 0;width:20px;transition:height 1.5s cubic-bezier(.25,.1,.25,1);box-shadow:0 0 10px rgba(0,212,255,0.3)}
+.chart-val{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:700;color:var(--neon);text-shadow:0 0 20px rgba(0,212,255,0.5)}
+.chart-desc{font-size:12px;color:var(--muted);margin-top:6px}
+.donut-wrap{width:100px;height:100px;margin:0 auto 16px;position:relative}
+.donut-svg circle{transition:stroke-dashoffset 2s cubic-bezier(.25,.1,.25,1)}
+.donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Orbitron',sans-serif;font-size:20px;font-weight:700;color:var(--neon)}
+
+/* STARTUP GENERATOR */
+.gen-area{max-width:700px;margin:0 auto;text-align:center}
+.gen-display{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;margin-bottom:24px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.gen-display::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,0.04),transparent,rgba(0,255,200,0.04));pointer-events:none}
+.gen-idea-name{font-family:'Orbitron',sans-serif;font-size:clamp(20px,3vw,32px);font-weight:700;color:var(--neon);margin-bottom:12px;text-shadow:0 0 20px rgba(0,212,255,0.4);transition:all .5s}
+.gen-idea-desc{font-size:14px;color:var(--muted);line-height:1.6;max-width:500px;transition:all .5s}
+.gen-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+.gen-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--neon);background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2);border-radius:100px;padding:4px 12px}
+.gen-btn{margin-top:8px}
+
+/* AI CHATBOT */
+.chatbot-mock{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.chat-header{padding:16px 20px;background:rgba(0,212,255,0.06);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+.chat-avatar{width:36px;height:36px;background:linear-gradient(135deg,var(--neon),var(--neon3));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+.chat-name{font-weight:600;font-size:14px}
+.chat-status{font-size:11px;color:var(--neon);display:flex;align-items:center;gap:4px}
+.chat-status::before{content:'';width:6px;height:6px;background:var(--neon3);border-radius:50%;box-shadow:0 0 6px var(--neon3)}
+.chat-messages{padding:20px;display:flex;flex-direction:column;gap:12px;min-height:200px}
+.msg{max-width:80%;font-size:13px;line-height:1.6;padding:10px 14px;border-radius:12px}
+.msg.bot{background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.15);border-radius:4px 12px 12px 12px;color:var(--text);align-self:flex-start}
+.msg.user{background:rgba(0,212,255,0.15);border:1px solid rgba(0,212,255,0.25);border-radius:12px 4px 12px 12px;color:var(--text);align-self:flex-end}
+.chat-input-row{padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px}
+.chat-input{flex:1;background:rgba(0,212,255,0.04);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-family:'Exo 2',sans-serif;font-size:13px;outline:none;transition:border-color .3s}
+.chat-input:focus{border-color:rgba(0,212,255,0.4)}
+.chat-send{width:36px;height:36px;background:var(--neon);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--dark);font-size:14px;transition:all .3s}
+.chat-send:hover{box-shadow:var(--glow);transform:scale(1.05)}
+.typing-dots span{display:inline-block;width:6px;height:6px;background:var(--neon);border-radius:50%;animation:typing-dot 1.4s infinite;margin:0 2px}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes typing-dot{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-8px)}}
+
+/* CONTACT */
+.contact-wrap{max-width:680px;margin:0 auto}
+.contact-intro{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:40px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--neon);margin-bottom:8px}
+.form-group input,.form-group textarea{width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);font-family:'Exo 2',sans-serif;font-size:14px;outline:none;transition:all .3s;resize:vertical}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(0,212,255,0.5);box-shadow:0 0 20px rgba(0,212,255,0.1)}
+.form-group textarea{min-height:140px}
+.form-submit{width:100%;padding:16px;background:var(--neon);color:var(--dark);font-family:'Exo 2',sans-serif;font-weight:700;font-size:14px;letter-spacing:3px;text-transform:uppercase;border:none;border-radius:8px;cursor:pointer;transition:all .3s;box-shadow:0 0 20px rgba(0,212,255,0.3)}
+.form-submit:hover{box-shadow:0 0 40px rgba(0,212,255,0.5),0 8px 30px rgba(0,0,0,0.3);transform:translateY(-2px)}
+.form-msg{padding:14px 18px;border-radius:8px;font-size:14px;margin-top:16px;display:none}
+.form-msg.success{background:rgba(0,255,150,0.1);border:1px solid rgba(0,255,150,0.3);color:#00ff96}
+.form-msg.error{background:rgba(255,50,50,0.1);border:1px solid rgba(255,50,50,0.3);color:#ff5050}
+
+/* ABOUT FOUNDER */
+.founder-wrap{max-width:800px;margin:0 auto;text-align:center}
+.founder-avatar{width:140px;height:140px;margin:0 auto 32px;position:relative}
+.founder-avatar-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon3));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:48px;font-weight:900;color:var(--dark);position:relative;z-index:1}
+.founder-ring{position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(0,212,255,0.3);animation:founder-spin 8s linear infinite}
+.founder-ring2{position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(0,212,255,0.15);animation:founder-spin 12s linear infinite reverse}
+@keyframes founder-spin{to{transform:rotate(360deg)}}
+.founder-name{font-family:'Orbitron',sans-serif;font-size:clamp(24px,4vw,40px);font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#fff,var(--neon));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.founder-title{color:var(--neon);font-size:14px;letter-spacing:4px;text-transform:uppercase;margin-bottom:32px}
+.founder-bio{font-size:clamp(14px,2vw,17px);color:var(--muted);line-height:1.8;margin-bottom:40px}
+.founder-quote{background:var(--card);border-left:3px solid var(--neon);border-radius:0 12px 12px 0;padding:24px 28px;text-align:left;margin:40px 0;font-style:italic;font-size:16px;color:var(--text);position:relative}
+.founder-skills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.skill-tag{padding:8px 18px;background:var(--glass);border:1px solid var(--border);border-radius:100px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--neon);transition:all .3s}
+.skill-tag:hover{background:rgba(0,212,255,0.15);border-color:var(--neon);box-shadow:var(--glow)}
+
+/* TIPS PAGE */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.tip-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;transition:all .4s;position:relative;overflow:hidden}
+.tip-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--neon),transparent);opacity:0;transition:opacity .4s}
+.tip-card:hover{transform:translateY(-4px);border-color:rgba(0,212,255,0.4);box-shadow:var(--glow2)}
+.tip-card:hover::before{opacity:1}
+.tip-num{font-family:'Orbitron',sans-serif;font-size:40px;font-weight:900;color:rgba(0,212,255,0.1);margin-bottom:8px;line-height:1}
+.tip-card h3{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px}
+.tip-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* STARTUP IDEAS */
+.ideas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.idea-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;transition:all .4s}
+.idea-card:hover{border-color:rgba(0,212,255,0.4);transform:translateY(-4px);box-shadow:var(--glow)}
+.idea-emoji{font-size:32px;margin-bottom:16px;display:block;filter:drop-shadow(0 0 10px rgba(0,212,255,0.3))}
+.idea-card h3{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.idea-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.idea-badge{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;font-weight:600}
+.badge-hot{background:rgba(255,100,50,0.15);color:#ff6432;border:1px solid rgba(255,100,50,0.3)}
+.badge-trend{background:rgba(0,212,255,0.1);color:var(--neon);border:1px solid rgba(0,212,255,0.3)}
+.badge-new{background:rgba(0,255,150,0.1);color:#00ff96;border:1px solid rgba(0,255,150,0.3)}
+
+/* MARKETING PAGE */
+.strategy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+.strategy-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;transition:all .4s;position:relative}
+.strategy-card:hover{transform:translateY(-6px);border-color:rgba(0,212,255,0.5);box-shadow:0 20px 60px rgba(0,0,0,0.4),var(--glow)}
+.strategy-num{position:absolute;top:20px;right:24px;font-family:'Orbitron',sans-serif;font-size:48px;font-weight:900;color:rgba(0,212,255,0.06);line-height:1}
+.strategy-card h3{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:600;color:var(--neon);margin-bottom:12px}
+.strategy-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.strategy-steps{margin-top:16px;list-style:none}
+.strategy-steps li{font-size:12px;color:var(--muted);padding:6px 0;border-bottom:1px solid rgba(0,212,255,0.05);display:flex;align-items:center;gap:8px}
+.strategy-steps li::before{content:'›';color:var(--neon);font-size:16px;flex-shrink:0}
+
+/* FOOTER */
+footer{background:var(--dark2);border-top:1px solid var(--border);padding:60px 40px 30px;position:relative;z-index:1}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto 40px}
+.footer-brand .nav-logo{display:block;margin-bottom:16px;cursor:default}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.footer-col h4{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;color:var(--neon);margin-bottom:16px;text-transform:uppercase}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .3s;cursor:pointer}
+.footer-col ul li a:hover{color:var(--neon)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding-top:30px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.footer-copy{font-size:12px;color:var(--muted)}
+.footer-glow{font-size:12px;color:var(--neon);letter-spacing:2px}
+
+/* LIGHT MODE */
+body.light-mode{--dark:#f0f8ff;--dark2:#e0f0ff;--dark3:#d0e8ff;--card:rgba(0,100,150,0.04);--glass:rgba(0,100,150,0.08);--border:rgba(0,150,200,0.2);--text:#0a2030;--muted:rgba(10,32,48,0.6);--neon:#0077aa;--glow:0 0 30px rgba(0,119,170,0.2);--glow2:0 0 60px rgba(0,119,170,0.1)}
+body.light-mode .hero-title .line2{background:linear-gradient(135deg,var(--neon),#0055aa,var(--dark));-webkit-background-clip:text;background-clip:text}
+body.light-mode .btn-primary{color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .timeline::before{left:20px}
+  .tl-item,.tl-item:nth-child(even){justify-content:flex-start;padding-left:60px;padding-right:0}
+  .tl-dot{left:20px}
+}
+@media(max-width:640px){
+  nav{padding:0 20px}
+  section{padding:70px 20px}
+  #home{padding:0 20px}
+  .nav-links{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(2,11,24,0.97);backdrop-filter:blur(20px);flex-direction:column;padding:20px;border-bottom:1px solid var(--border);gap:4px}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{gap:24px}
+  .stat-divider{display:none}
+  .hero-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">ZNO</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text">Initializing Growth Engine</div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- PROGRESS BAR -->
+<div id="progress"></div>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" onclick="showPage('home')">ZNO</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('tips')">Business Tips</a></li>
+    <li><a onclick="showPage('startup')">Startup Ideas</a></li>
+    <li><a onclick="showPage('marketing')">Marketing</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
+    <li><a onclick="showPage('founder')">Founder</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:12px">
+    <button class="music-btn" id="musicBtn" title="Toggle music">♫</button>
+    <div class="dark-toggle" id="darkToggle" title="Toggle theme"></div>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ============ HOME PAGE ============ -->
+<div class="page active" id="page-home">
+
+<!-- HERO -->
+<section id="home" style="padding-top:0">
+  <div class="hero-bg"></div>
+  <div class="grid-lines"></div>
+  <!-- Floating icons -->
+  <span class="float-icon" style="left:8%;top:30%;animation-duration:6s;animation-delay:0s">💡</span>
+  <span class="float-icon" style="left:15%;top:60%;animation-duration:8s;animation-delay:1s">📈</span>
+  <span class="float-icon" style="right:10%;top:25%;animation-duration:7s;animation-delay:2s">🚀</span>
+  <span class="float-icon" style="right:18%;top:65%;animation-duration:9s;animation-delay:.5s">💰</span>
+  <span class="float-icon" style="left:5%;top:50%;animation-duration:10s;animation-delay:3s">🎯</span>
+  <span class="float-icon" style="right:5%;top:50%;animation-duration:7s;animation-delay:1.5s">⚡</span>
+  <div class="hero-content">
+    <div class="hero-badge">🌐 Future of Business — 2025</div>
+    <h1 class="hero-title">
+      <span class="line1">Grow Your Business Like a</span>
+      <span class="line2">Billion Dollar Company</span>
+    </h1>
+    <p class="hero-sub">Master <span class="hero-type" id="typeText">marketing strategies</span> and build the startup of your dreams. From zero to unicorn — your entrepreneurial journey starts here.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="showPage('tips')">Start Learning</button>
+      <button class="btn-secondary" onclick="showPage('contact')">Get Business Advice</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num" data-target="10000" data-suffix="K+">0</span>
+        <span class="stat-label">Entrepreneurs</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="500" data-suffix="+">0</span>
+        <span class="stat-label">Business Tips</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="100" data-suffix="+">0</span>
+        <span class="stat-label">Growth Strategies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="padding-top:60px">
+  <div class="center">
+    <span class="section-label reveal">What We Offer</span>
+    <h2 class="section-title reveal">Everything You Need to Scale</h2>
+    <p class="section-sub reveal">From marketing hacks to AI-powered tools — unlock the full playbook of modern business growth.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feat-card reveal" style="transition-delay:.05s">
+      <div class="feat-icon">📣</div>
+      <h3>Marketing Tricks</h3>
+      <p>Viral growth loops, guerrilla marketing, and data-driven campaigns that multiply your reach.</p>
+      <span class="feat-tag">High Impact</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.1s">
+      <div class="feat-icon">🎨</div>
+      <h3>Branding Strategy</h3>
+      <p>Build a brand identity so powerful that customers become lifelong advocates.</p>
+      <span class="feat-tag">Brand Power</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.15s">
+      <div class="feat-icon">🧠</div>
+      <h3>Customer Psychology</h3>
+      <p>Decode buyer behavior with neuroscience and behavioral economics for sky-high conversions.</p>
+      <span class="feat-tag">Conversion</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.2s">
+      <div class="feat-icon">📱</div>
+      <h3>Social Media Growth</h3>
+      <p>Algorithmic mastery across Instagram, TikTok, LinkedIn, and X to grow your audience fast.</p>
+      <span class="feat-tag">Viral</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.25s">
+      <div class="feat-icon">💸</div>
+      <h3>Startup Funding</h3>
+      <p>Navigate VC pitches, angel investors, crowdfunding, and bootstrapping paths to capital.</p>
+      <span class="feat-tag">Fundraising</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.3s">
+      <div class="feat-icon">⚡</div>
+      <h3>Productivity Hacks</h3>
+      <p>10x your output with proven systems used by top CEOs, operators, and solopreneurs.</p>
+      <span class="feat-tag">Efficiency</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.35s">
+      <div class="feat-icon">🤖</div>
+      <h3>AI Tools for Business</h3>
+      <p>Leverage ChatGPT, Claude, Midjourney, and 50+ AI tools to automate and accelerate growth.</p>
+      <span class="feat-tag">Future-Ready</span>
+    </div>
+    <div class="feat-card reveal" style="transition-delay:.4s">
+      <div class="feat-icon">💰</div>
+      <h3>Passive Income Ideas</h3>
+      <p>Build income streams that generate revenue while you sleep — SaaS, digital products, and more.</p>
+      <span class="feat-tag">Financial Freedom</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">The Journey</span>
+    <h2 class="section-title reveal">Business Growth Roadmap</h2>
+    <p class="section-sub reveal">The proven path from idea to empire — follow the steps every successful founder took.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-dot" style="top:24px"></div>
+    <div class="tl-item reveal">
+      <div class="tl-card">
+        <span class="tl-step">Phase 01</span>
+        <h3>Validate the Idea</h3>
+        <p>Test market demand before writing a single line of code or spending a dollar. Talk to 50 potential customers.</p>
+      </div>
+    </div>
+    <div class="tl-dot" style="top:calc(160px + 24px)"></div>
+    <div class="tl-item reveal" style="transition-delay:.1s">
+      <div class="tl-card">
+        <span class="tl-step">Phase 02</span>
+        <h3>Build MVP Fast</h3>
+        <p>Launch your minimum viable product in weeks, not months. Speed to market beats perfection every time.</p>
+      </div>
+    </div>
+    <div class="tl-dot" style="top:calc(320px + 24px)"></div>
+    <div class="tl-item reveal" style="transition-delay:.2s">
+      <div class="tl-card">
+        <span class="tl-step">Phase 03</span>
+        <h3>Get First 100 Users</h3>
+        <p>Hustle your way to early adopters. Do things that don't scale — personal outreach, communities, networks.</p>
+      </div>
+    </div>
+    <div class="tl-dot" style="top:calc(480px + 24px)"></div>
+    <div class="tl-item reveal" style="transition-delay:.3s">
+      <div class="tl-card">
+        <span class="tl-step">Phase 04</span>
+        <h3>Find Product-Market Fit</h3>
+        <p>Iterate relentlessly until users can't imagine life without your product. Retention is your north star.</p>
+      </div>
+    </div>
+    <div class="tl-dot" style="top:calc(640px + 24px)"></div>
+    <div class="tl-item reveal" style="transition-delay:.4s">
+      <div class="tl-card">
+        <span class="tl-step">Phase 05</span>
+        <h3>Scale & Dominate</h3>
+        <p>Pour fuel on what's working. Hire, automate, expand. Build systems that grow without you at the center.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">Growth Metrics</span>
+    <h2 class="section-title reveal">Business Impact Dashboard</h2>
+    <p class="section-sub reveal">Real results from entrepreneurs who followed the ZNO methodology.</p>
+  </div>
+  <div class="charts-grid" id="chartsGrid">
+    <div class="chart-card reveal">
+      <div class="chart-label">Revenue Growth</div>
+      <div class="chart-bar-wrap" id="barChart1">
+        <div class="chart-bar" style="height:0%" data-h="30%"></div>
+        <div class="chart-bar" style="height:0%" data-h="50%"></div>
+        <div class="chart-bar" style="height:0%" data-h="45%"></div>
+        <div class="chart-bar" style="height:0%" data-h="70%"></div>
+        <div class="chart-bar" style="height:0%" data-h="65%"></div>
+        <div class="chart-bar" style="height:0%" data-h="90%"></div>
+        <div class="chart-bar" style="height:0%" data-h="100%"></div>
+      </div>
+      <div class="chart-val">340%</div>
+      <div class="chart-desc">Average revenue increase</div>
+    </div>
+    <div class="chart-card reveal" style="transition-delay:.1s">
+      <div class="chart-label">Customer Acquisition</div>
+      <svg class="donut-wrap" width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="12"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#donutGrad)" stroke-width="12" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="50" id="donut1" transform="rotate(-90 50 50)"/>
+        <defs><linearGradient id="donutGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#00ffcc"/></linearGradient></defs>
+      </svg>
+      <div class="chart-val">80%</div>
+      <div class="chart-desc">CAC reduction achieved</div>
+    </div>
+    <div class="chart-card reveal" style="transition-delay:.2s">
+      <div class="chart-label">Social Media Reach</div>
+      <div class="chart-bar-wrap" id="barChart2">
+        <div class="chart-bar" style="height:0%;background:linear-gradient(to top,#00ffcc,rgba(0,255,200,0.3))" data-h="20%"></div>
+        <div class="chart-bar" style="height:0%;background:linear-gradient(to top,#00ffcc,rgba(0,255,200,0.3))" data-h="35%"></div>
+        <div class="chart-bar" style="height:0%;background:linear-gradient(to top,#00ffcc,rgba(0,255,200,0.3))" data-h="55%"></div>
+        <div class="chart-bar" style="height:0%;background:linear-gradient(to top,#00ffcc,rgba(0,255,200,0.3))" data-h="80%"></div>
+        <div class="chart-bar" style="height:0%;background:linear-gradient(to top,#00ffcc,rgba(0,255,200,0.3))" data-h="100%"></div>
+      </div>
+      <div class="chart-val">5M+</div>
+      <div class="chart-desc">Total impressions/month</div>
+    </div>
+    <div class="chart-card reveal" style="transition-delay:.3s">
+      <div class="chart-label">User Retention</div>
+      <svg class="donut-wrap" width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="12"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="url(#donutGrad2)" stroke-width="12" stroke-linecap="round"
+          stroke-dasharray="251.2" stroke-dashoffset="38" id="donut2" transform="rotate(-90 50 50)"/>
+        <defs><linearGradient id="donutGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#0066ff"/></linearGradient></defs>
+      </svg>
+      <div class="chart-val">85%</div>
+      <div class="chart-desc">90-day retention rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- STARTUP GENERATOR -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">Idea Engine</span>
+    <h2 class="section-title reveal">AI Startup Idea Generator</h2>
+    <p class="section-sub reveal">Can't find your big idea? Let us generate one. Hit the button and spark your next million-dollar venture.</p>
+  </div>
+  <div class="gen-area">
+    <div class="gen-display reveal">
+      <div class="gen-idea-name" id="genName">Click Generate Below ↓</div>
+      <div class="gen-idea-desc" id="genDesc">Your next big startup idea is one click away. We'll generate a unique, market-ready concept just for you.</div>
+      <div class="gen-tags" id="genTags">
+        <span class="gen-tag">AI-Powered</span>
+        <span class="gen-tag">Unlimited Ideas</span>
+      </div>
+    </div>
+    <button class="btn-primary gen-btn reveal" onclick="generateIdea()">⚡ Generate Startup Idea</button>
+  </div>
+</section>
+
+<!-- QUOTE CAROUSEL -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">Wisdom</span>
+    <h2 class="section-title reveal">Words That Built Empires</h2>
+  </div>
+  <div class="quote-carousel reveal" id="quoteBox">
+    <div class="quote-text" id="quoteText">"The best time to start was yesterday. The second best time is now."</div>
+    <div class="quote-author" id="quoteAuthor">— Entrepreneurship Proverb</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">Success Stories</span>
+    <h2 class="section-title reveal">Entrepreneurs Who Made It</h2>
+    <p class="section-sub reveal">Real stories from founders who used ZNO strategies to build their dreams.</p>
+  </div>
+  <div class="testimonials-slider reveal">
+    <div class="testimonials-track" id="testTrack">
+      <div class="testimonial">
+        <p class="test-quote">ZNO transformed how I think about business. Within 6 months of following the growth roadmap, my SaaS revenue went from ₹50K to ₹8 lakh per month. This isn't theory — it's a proven system.</p>
+        <div class="test-avatar">AR</div>
+        <div class="test-name">Arjun Reddy</div>
+        <div class="test-role">SaaS Founder, Bangalore</div>
+      </div>
+      <div class="testimonial">
+        <p class="test-quote">I was working a 9-5 and dreaming of freedom. ZNO's passive income roadmap helped me build 4 income streams. Now I earn more in a week than I used to in a month. The AI tools section alone is worth everything.</p>
+        <div class="test-avatar">PS</div>
+        <div class="test-name">Priya Sharma</div>
+        <div class="test-role">Digital Entrepreneur, Mumbai</div>
+      </div>
+      <div class="testimonial">
+        <p class="test-quote">The marketing strategies in ZNO are on another level. We grew our D2C brand from 200 to 25,000 Instagram followers in 90 days. The customer psychology section changed how we write every single ad.</p>
+        <div class="test-avatar">VK</div>
+        <div class="test-name">Vikram Kumar</div>
+        <div class="test-role">D2C Brand Founder, Delhi</div>
+      </div>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+      <div class="dot active" onclick="goSlide(0)"></div>
+      <div class="dot" onclick="goSlide(1)"></div>
+      <div class="dot" onclick="goSlide(2)"></div>
+    </div>
+    <div class="slider-btns">
+      <div class="slider-btn" onclick="prevSlide()">‹</div>
+      <div class="slider-btn" onclick="nextSlide()">›</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">Got Questions?</span>
+    <h2 class="section-title reveal">Frequently Asked</h2>
+    <p class="section-sub reveal">Everything you want to know about growing your business the ZNO way.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">How long does it take to see results? <span class="faq-arrow">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Most entrepreneurs see measurable growth within 30–60 days when consistently applying the strategies. Real transformation typically happens in 3–6 months. The key is consistency over perfection.</div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.05s">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need a big budget to start? <span class="faq-arrow">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely not. Many of the most powerful strategies here require zero budget — just hustle, smart thinking, and consistency. We cover bootstrapping paths specifically for founders starting from nothing.</div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.1s">
+      <div class="faq-q" onclick="toggleFaq(this)">What type of businesses does this work for? <span class="faq-arrow">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">ZNO strategies work for SaaS, e-commerce, services, content businesses, agencies, D2C brands, and traditional businesses looking to digitize. The principles are universal — execution varies by industry.</div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.15s">
+      <div class="faq-q" onclick="toggleFaq(this)">Can I get 1-on-1 advice from the founder? <span class="faq-arrow">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes! Use the Contact page to send your specific question or business challenge. Shubhajit personally reviews messages and responds with actionable, personalized guidance.</div></div>
+    </div>
+    <div class="faq-item reveal" style="transition-delay:.2s">
+      <div class="faq-q" onclick="toggleFaq(this)">Are AI tools really that important for business in 2025? <span class="faq-arrow">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">They are non-negotiable. Businesses using AI tools are operating at 3–10x the speed of those that aren't. From customer service to content creation, AI is the great equalizer for small businesses competing against giants.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI CHATBOT MOCKUP -->
+<section>
+  <div class="center">
+    <span class="section-label reveal">AI Assistant</span>
+    <h2 class="section-title reveal">ZNO Business AI Coach</h2>
+    <p class="section-sub reveal">Get instant business guidance powered by AI. Ask anything about growth, strategy, and entrepreneurship.</p>
+  </div>
+  <div class="chatbot-mock reveal" id="chatbotMock">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <div class="chat-name">ZNO AI Coach</div>
+        <div class="chat-status">Online — Ready to help</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Hey there! 👋 I'm your ZNO Business Coach. Ask me anything about growing your business, marketing strategies, or startup ideas!</div>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Ask about marketing, funding, growth..." onkeypress="if(event.key==='Enter')sendChat()">
+      <button class="chat-send" onclick="sendChat()">➤</button>
+    </div>
+  </div>
+</section>
+
+</div><!-- end home page -->
+
+<!-- ============ TIPS PAGE ============ -->
+<div class="page" id="page-tips">
+<section style="padding-top:120px">
+  <span class="section-label">Knowledge Base</span>
+  <h2 class="section-title">Top Business Tips</h2>
+  <p class="section-sub" style="margin-bottom:50px">Actionable, battle-tested advice from the world's most successful entrepreneurs and operators.</p>
+  <div class="tips-grid">
+    <div class="tip-card reveal"><div class="tip-num">01</div><h3>Build in Public</h3><p>Share your journey openly — wins, failures, lessons. Transparency builds trust and an organic audience that becomes your first customers.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.05s"><div class="tip-num">02</div><h3>Talk to Customers Daily</h3><p>The founders who win are obsessed with customer feedback. Schedule 5 customer calls per week. Always. Non-negotiable.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.1s"><div class="tip-num">03</div><h3>Solve One Problem Brilliantly</h3><p>Breadth is the enemy of depth. The most valuable companies in the world solve one core problem better than anyone else.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.15s"><div class="tip-num">04</div><h3>Price Higher Than You Think</h3><p>Most founders underprice. High prices signal quality, attract serious buyers, and give you margin to reinvest in growth.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.2s"><div class="tip-num">05</div><h3>Distribution Over Product</h3><p>A good product with great distribution beats a great product with poor distribution. Build your distribution channel first.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.25s"><div class="tip-num">06</div><h3>Hire Slow, Fire Fast</h3><p>Every team member shapes your culture. One wrong hire can destroy what took months to build. Be ruthless about fit.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.3s"><div class="tip-num">07</div><h3>Build Systems, Not Just Sales</h3><p>Chase revenue early, but build systems in parallel. A business that relies only on you isn't an asset — it's a job.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.35s"><div class="tip-num">08</div><h3>Your Network = Net Worth</h3><p>Invest in relationships before you need them. The best opportunities, hires, and investors come through people who trust you.</p></div>
+    <div class="tip-card reveal" style="transition-delay:.4s"><div class="tip-num">09</div><h3>Measure What Matters</h3><p>Pick 3 key metrics and obsess over them. Revenue, retention, and referrals tell you everything you need to know.</p></div>
+  </div>
+</section>
+</div>
+
+<!-- ============ STARTUP IDEAS PAGE ============ -->
+<div class="page" id="page-startup">
+<section style="padding-top:120px">
+  <span class="section-label">Opportunity Map</span>
+  <h2 class="section-title">Hot Startup Ideas for 2025</h2>
+  <p class="section-sub" style="margin-bottom:50px">Curated, validated ideas across high-growth sectors. Find the one that matches your skills and passion.</p>
+  <div class="ideas-grid">
+    <div class="idea-card reveal"><span class="idea-emoji">🤖</span><h3>AI Writing Assistant for SMBs</h3><p>Most small businesses can't afford content teams. Build an affordable AI tool that writes emails, ads, and posts tailored to their brand voice.</p><span class="idea-badge badge-hot">🔥 Hot</span></div>
+    <div class="idea-card reveal" style="transition-delay:.05s"><span class="idea-emoji">🎓</span><h3>Micro-Learning Platform</h3><p>5-minute daily skill lessons for busy professionals. Focus on one niche (finance, coding, marketing) and own it completely.</p><span class="idea-badge badge-trend">📈 Trending</span></div>
+    <div class="idea-card reveal" style="transition-delay:.1s"><span class="idea-emoji">🏠</span><h3>Remote Work Infrastructure SaaS</h3><p>Tools helping distributed teams manage culture, async communication, and productivity. The remote work era is permanent.</p><span class="idea-badge badge-new">✨ New</span></div>
+    <div class="idea-card reveal" style="transition-delay:.15s"><span class="idea-emoji">🛒</span><h3>D2C Niche E-commerce</h3><p>Pick the most underserved niche (e.g. eco-friendly pet products, ayurvedic supplements) and dominate it with brand-first strategy.</p><span class="idea-badge badge-hot">🔥 Hot</span></div>
+    <div class="idea-card reveal" style="transition-delay:.2s"><span class="idea-emoji">📊</span><h3>B2B Analytics for Creators</h3><p>Influencers need business-grade insights. Build dashboards that help them understand audience, monetize smarter, and negotiate better.</p><span class="idea-badge badge-trend">📈 Trending</span></div>
+    <div class="idea-card reveal" style="transition-delay:.25s"><span class="idea-emoji">🧘</span><h3>Mental Wellness for Founders</h3><p>Burnout is the silent epidemic in startups. Build a platform combining therapy, peer support, and founder-specific coaching.</p><span class="idea-badge badge-new">✨ New</span></div>
+  </div>
+</section>
+</div>
+
+<!-- ============ MARKETING PAGE ============ -->
+<div class="page" id="page-marketing">
+<section style="padding-top:120px">
+  <span class="section-label">Growth Playbook</span>
+  <h2 class="section-title">Marketing Strategies That Scale</h2>
+  <p class="section-sub" style="margin-bottom:50px">The exact frameworks used by billion-dollar brands — made accessible for every founder.</p>
+  <div class="strategy-grid">
+    <div class="strategy-card reveal">
+      <span class="strategy-num">01</span>
+      <h3>Content Marketing Flywheel</h3>
+      <p>Build a compounding content engine that attracts, educates, and converts 24/7 without paid ads.</p>
+      <ul class="strategy-steps">
+        <li>Identify 10 core topics your audience searches</li>
+        <li>Create pillar content + 30 supporting pieces</li>
+        <li>Repurpose across every platform in different formats</li>
+        <li>Build email list from content traffic</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal" style="transition-delay:.1s">
+      <span class="strategy-num">02</span>
+      <h3>Viral Loop Architecture</h3>
+      <p>Design your product so every new user naturally brings more users. The best growth is baked in, not bolted on.</p>
+      <ul class="strategy-steps">
+        <li>Map the moments users share your product</li>
+        <li>Add incentive layers at each share point</li>
+        <li>Make sharing frictionless and rewarding</li>
+        <li>Measure K-factor and optimize continuously</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal" style="transition-delay:.2s">
+      <span class="strategy-num">03</span>
+      <h3>Community-Led Growth</h3>
+      <p>Build a community around a shared identity, not just a product. Communities create moats no competitor can buy.</p>
+      <ul class="strategy-steps">
+        <li>Define the shared mission beyond your product</li>
+        <li>Create exclusive spaces (Discord, Slack, Circle)</li>
+        <li>Empower super-users as community leaders</li>
+        <li>Turn community insights into product features</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal" style="transition-delay:.3s">
+      <span class="strategy-num">04</span>
+      <h3>Influencer Micro-Network</h3>
+      <p>Partner with 50 micro-influencers instead of 1 mega-influencer. Higher trust, better ROI, deeper niches.</p>
+      <ul class="strategy-steps">
+        <li>Find influencers with 5K–100K engaged followers</li>
+        <li>Offer equity or rev-share instead of just cash</li>
+        <li>Give creative freedom — it performs better</li>
+        <li>Track attribution with unique codes per creator</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal" style="transition-delay:.4s">
+      <span class="strategy-num">05</span>
+      <h3>Email Automation Sequences</h3>
+      <p>Your email list is the only channel you truly own. Build sequences that turn cold leads into raving fans.</p>
+      <ul class="strategy-steps">
+        <li>Lead magnet → welcome sequence (7 emails)</li>
+        <li>Nurture content → case studies → soft sell</li>
+        <li>Behaviour-triggered sequences by action</li>
+        <li>Re-engagement campaign every 90 days</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal" style="transition-delay:.5s">
+      <span class="strategy-num">06</span>
+      <h3>SEO Moat Building</h3>
+      <p>Own the first page for 100 high-intent keywords and watch organic revenue compound for years.</p>
+      <ul class="strategy-steps">
+        <li>Programmatic SEO for long-tail opportunities</li>
+        <li>Build topical authority through content clusters</li>
+        <li>Strategic link building through digital PR</li>
+        <li>Technical SEO audits every quarter</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ CONTACT PAGE ============ -->
+<div class="page" id="page-contact">
+<section style="padding-top:120px;max-width:800px;margin:0 auto">
+  <span class="section-label">Direct Line</span>
+  <h2 class="section-title">Get Business Advice</h2>
+  <div class="contact-intro reveal">
+    Need personal business advice? Contact me directly and get <span style="color:var(--neon)">smart, actionable business guidance</span> tailored to your specific situation. Whether you're starting out or scaling up — let's talk strategy.
+  </div>
+  <div class="contact-wrap">
+    <form id="contactForm" class="reveal" onsubmit="submitForm(event)">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="fname" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="femail" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label>Your Business Challenge</label>
+        <textarea id="fmsg" placeholder="Tell me about your business, what you're building, and your biggest challenge right now..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message → sarmilamandal716@gmail.com</button>
+      <div class="form-msg" id="formMsg"></div>
+    </form>
+  </div>
+</section>
+</div>
+
+<!-- ============ FOUNDER PAGE ============ -->
+<div class="page" id="page-founder">
+<section style="padding-top:120px">
+  <div class="founder-wrap">
+    <div class="founder-avatar reveal">
+      <div class="founder-ring"></div>
+      <div class="founder-ring2"></div>
+      <div class="founder-avatar-inner">SS</div>
+    </div>
+    <h1 class="founder-name reveal">Shubhajit Sarkar</h1>
+    <div class="founder-title reveal">Future Entrepreneur · Founder of ZNO</div>
+    <p class="founder-bio reveal">I'm Shubhajit Sarkar — a young entrepreneur on a mission to democratize business knowledge for every ambitious dreamer in India and beyond. I created ZNO Business Growth Hub to be the platform I wish existed when I was starting out. No gatekeeping. No fluff. Just real, actionable growth strategies that work.</p>
+    <div class="founder-quote reveal">
+      "I believe every ordinary person has an extraordinary business inside them. The only difference between those who build empires and those who just dream about them is the right knowledge, applied with relentless consistency. ZNO exists to bridge that gap."
+      <br><br><strong style="color:var(--neon)">— Shubhajit Sarkar</strong>
+    </div>
+    <p class="founder-bio reveal">From studying the playbooks of Elon Musk, Ratan Tata, and Jeff Bezos to building systems that work for first-generation entrepreneurs — ZNO is the distillation of everything I've learned. The journey has just begun, and I'm building this alongside you.</p>
+    <div class="founder-skills reveal">
+      <span class="skill-tag">Business Strategy</span>
+      <span class="skill-tag">Digital Marketing</span>
+      <span class="skill-tag">Growth Hacking</span>
+      <span class="skill-tag">AI & Automation</span>
+      <span class="skill-tag">Entrepreneurship</span>
+      <span class="skill-tag">Startup Building</span>
+      <span class="skill-tag">Content Creation</span>
+      <span class="skill-tag">Personal Finance</span>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- FOOTER (shown on all pages) -->
+<footer id="mainFooter">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="nav-logo" style="display:block;margin-bottom:16px;text-shadow:0 0 20px rgba(0,212,255,0.5)">ZNO</span>
+      <p class="footer-desc">ZNO Business Growth Hub — The #1 platform for ambitious entrepreneurs who want to build, scale, and dominate their markets.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('tips')">Business Tips</a></li>
+        <li><a onclick="showPage('startup')">Startup Ideas</a></li>
+        <li><a onclick="showPage('marketing')">Marketing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a onclick="showPage('tips')">Growth Strategies</a></li>
+        <li><a onclick="showPage('startup')">Idea Generator</a></li>
+        <li><a onclick="showPage('marketing')">Marketing Playbook</a></li>
+        <li><a onclick="showPage('contact')">Get Advice</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a>sarmilamandal716@gmail.com</a></li>
+        <li><a onclick="showPage('founder')">About Founder</a></li>
+        <li><a onclick="showPage('contact')">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 ZNO Business Growth Hub · Created by Shubhajit Sarkar</span>
+    <span class="footer-glow">GROW · SCALE · DOMINATE</span>
+  </div>
+</footer>
+
+<script>
+// ---- LOADER ----
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('hidden')
+    animateCounters()
+    animateBars()
+  },2800)
+})
+
+// ---- CURSOR ----
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring')
+let mx=0,my=0,rx=0,ry=0
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX;my=e.clientY
+  cur.style.left=mx+'px';cur.style.top=my+'px'
+})
+function animRing(){
+  rx+=(mx-rx)*.12;ry+=(my-ry)*.12
+  ring.style.left=rx+'px';ring.style.top=ry+'px'
+  requestAnimationFrame(animRing)
+}animRing()
+document.querySelectorAll('button,a,.feat-card,.faq-q,.slider-btn,.dot,.skill-tag').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur.style.opacity='.5'})
+  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1'})
+})
+
+// ---- PARTICLES ----
+const pCont=document.getElementById('particles')
+for(let i=0;i<50;i++){
+  const p=document.createElement('div')
+  p.className='particle'
+  const sz=Math.random()*3+1
+  p.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;animation-duration:${Math.random()*20+10}s;animation-delay:${Math.random()*15}s`
+  pCont.appendChild(p)
+}
+
+// ---- SCROLL ----
+window.addEventListener('scroll',()=>{
+  const prog=document.getElementById('progress')
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100
+  prog.style.width=pct+'%'
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50)
+  revealElements()
+})
+function revealElements(){
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{
+    const r=el.getBoundingClientRect()
+    if(r.top<window.innerHeight-80)el.classList.add('visible')
+  })
+}
+setTimeout(revealElements,100)
+
+// ---- PAGE ROUTING ----
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'))
+  document.getElementById('page-'+id).classList.add('active')
+  window.scrollTo({top:0,behavior:'smooth'})
+  document.getElementById('navLinks').classList.remove('open')
+  setTimeout(()=>{revealElements();if(id==='home'){animateCounters();animateBars()}},100)
+}
+
+// ---- NAV TOGGLE ----
+document.getElementById('navToggle').onclick=()=>document.getElementById('navLinks').classList.toggle('open')
+
+// ---- DARK MODE ----
+document.getElementById('darkToggle').onclick=()=>document.body.classList.toggle('light-mode')
+
+// ---- MUSIC TOGGLE ----
+let musicOn=false
+document.getElementById('musicBtn').onclick=function(){
+  musicOn=!musicOn
+  this.textContent=musicOn?'♬':'♫'
+  this.style.background=musicOn?'var(--neon)':'var(--glass)'
+  this.style.color=musicOn?'var(--dark)':'var(--neon)'
+}
+
+// ---- TYPING ANIMATION ----
+const words=['marketing strategies','branding secrets','startup funding','social media growth','AI automation','passive income','customer psychology','growth hacking']
+let wi=0,ci=0,del=false
+function typeNext(){
+  const word=words[wi]
+  const el=document.getElementById('typeText')
+  if(!el)return
+  if(!del){
+    el.textContent=word.slice(0,++ci)
+    if(ci===word.length){del=true;setTimeout(typeNext,2000);return}
+  }else{
+    el.textContent=word.slice(0,--ci)
+    if(ci===0){del=false;wi=(wi+1)%words.length}
+  }
+  setTimeout(typeNext,del?60:100)
+}
+typeNext()
+
+// ---- COUNTERS ----
+function animateCounters(){
+  document.querySelectorAll('.stat-num[data-target]').forEach(el=>{
+    const target=+el.dataset.target,suffix=el.dataset.suffix||''
+    let cur=0,step=target/60
+    const t=setInterval(()=>{
+      cur=Math.min(cur+step,target)
+      const display=target>=1000?Math.round(cur/1000)+'K':Math.round(cur)
+      el.textContent=display+suffix
+      if(cur>=target)clearInterval(t)
+    },25)
+  })
+}
+
+// ---- BARS ----
+function animateBars(){
+  setTimeout(()=>{
+    document.querySelectorAll('.chart-bar[data-h]').forEach((b,i)=>{
+      setTimeout(()=>b.style.height=b.dataset.h,i*80)
+    })
+  },400)
+}
+
+// ---- FAQ ----
+function toggleFaq(el){
+  const item=el.parentElement
+  const wasOpen=item.classList.contains('open')
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'))
+  if(!wasOpen)item.classList.add('open')
+}
+
+// ---- TESTIMONIALS ----
+let slide=0
+function goSlide(n){
+  slide=n
+  document.getElementById('testTrack').style.transform=`translateX(-${n*100}%)`
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n))
+}
+function nextSlide(){goSlide((slide+1)%3)}
+function prevSlide(){goSlide((slide+2)%3)}
+setInterval(nextSlide,5000)
+
+// ---- QUOTES ----
+const quotes=[
+  {t:'"The best time to start was yesterday. The second best time is now."',a:'— Entrepreneurship Proverb'},
+  {t:'"Your most unhappy customers are your greatest source of learning."',a:'— Bill Gates'},
+  {t:'"Make your product so good people feel guilty using a free alternative."',a:'— Patrick McKenzie'},
+  {t:'"Revenue is vanity. Profit is sanity. Cash is reality."',a:'— Alan Miltz'},
+  {t:'"Build something 100 people love, not something 1 million people kind of like."',a:'— Paul Graham'},
+  {t:'"The biggest risk is not taking any risk."',a:'— Mark Zuckerberg'},
+  {t:'"Work on businesses that could change the world, not just make money."',a:'— Shubhajit Sarkar, ZNO'},
+]
+let qi=0
+function nextQuote(){
+  qi=(qi+1)%quotes.length
+  const el=document.getElementById('quoteText'),al=document.getElementById('quoteAuthor')
+  if(!el)return
+  el.style.opacity=0
+  al.style.opacity=0
+  setTimeout(()=>{el.textContent=quotes[qi].t;al.textContent=quotes[qi].a;el.style.opacity=1;al.style.opacity=1},500)
+}
+setInterval(nextQuote,5000)
+
+// ---- STARTUP GENERATOR ----
+const ideas=[
+  {n:'GrowAI',d:'An AI-powered business coach that gives personalized growth advice based on your industry, stage, and goals. ₹499/month subscription.',tags:['AI','SaaS','B2B']},
+  {n:'NanoInfluence',d:'A marketplace connecting hyperlocal micro-influencers (1K–10K followers) with small businesses for authentic, affordable campaigns.',tags:['Marketing','Marketplace','Creator Economy']},
+  {n:'FounderFuel',d:'A daily 5-minute audio briefing with curated business insights, market news, and one actionable tip — for entrepreneurs on the go.',tags:['Content','Audio','B2C']},
+  {n:'RetentionBot',d:'AI that predicts which customers are about to churn and automatically triggers personalized win-back campaigns via WhatsApp.',tags:['AI','SaaS','Retention']},
+  {n:'SkillSwap India',d:'A peer-to-peer skill exchange platform — trade graphic design for coding lessons, marketing help for accounting advice.',tags:['Marketplace','Education','Community']},
+  {n:'ProfitPulse',d:'Simple, beautiful financial dashboards for D2C brands — connects to Shopify, Razorpay, and Instamojo to give real-time profit clarity.',tags:['Fintech','SaaS','D2C']},
+  {n:'TeamOS',d:'A remote work OS for Indian SMBs — task management, video calls, payroll, and culture tools in one affordable platform.',tags:['B2B','SaaS','Remote Work']},
+  {n:'BrandBot',d:'AI-generated brand identity kits (logo, colors, tagline, tone of voice) for early-stage startups in under 5 minutes.',tags:['AI','Branding','Design']},
+]
+function generateIdea(){
+  const idea=ideas[Math.floor(Math.random()*ideas.length)]
+  const n=document.getElementById('genName'),d=document.getElementById('genDesc'),t=document.getElementById('genTags')
+  n.style.opacity=0;d.style.opacity=0
+  setTimeout(()=>{
+    n.textContent=idea.n;d.textContent=idea.d
+    t.innerHTML=idea.tags.map(tag=>`<span class="gen-tag">${tag}</span>`).join('')
+    n.style.opacity=1;d.style.opacity=1
+  },300)
+}
+
+// ---- CHATBOT ----
+const botReplies={
+  default:["Great question! For business growth, focus on one channel at a time, nail product-market fit, and build systems before scaling. What's your biggest bottleneck right now?","That's a common challenge for founders. The key is to validate before you build, talk to 50 potential customers, then iterate fast based on real feedback.","I'd recommend starting with content marketing — it's the highest-ROI channel for early-stage businesses with limited budgets. Consistency beats perfection every time.","Focus on retention before acquisition. If customers aren't sticking around, throwing more money at ads just amplifies the leak. Fix the bucket first!","The #1 mistake founders make is building in isolation. Get out and talk to customers every single day. That's where all the real answers are."],
+  marketing:["For marketing in 2025, content + community is the winning combination. Build in public, share your journey, and turn followers into customers organically.","Influencer marketing still works — but go micro. 50 influencers with 10K engaged followers beats 1 influencer with 500K passive followers every time."],
+  funding:["For early-stage funding in India, look at Sequoia Surge, Blume Ventures, and Y Combinator India track. But first — try to get to ₹10-20L ARR before raising.","Revenue-based financing is underrated for D2C brands. Check out Velocity, GetVantage, or Klub for non-dilutive capital against your revenue."],
+}
+function sendChat(){
+  const inp=document.getElementById('chatInput'),msgs=document.getElementById('chatMessages')
+  if(!inp.value.trim())return
+  const userMsg=document.createElement('div')
+  userMsg.className='msg user';userMsg.textContent=inp.value
+  msgs.appendChild(userMsg)
+  const typing=document.createElement('div')
+  typing.className='msg bot'
+  typing.innerHTML='<div class="typing-dots"><span></span><span></span><span></span></div>'
+  msgs.appendChild(typing)
+  msgs.scrollTop=msgs.scrollHeight
+  const q=inp.value.toLowerCase();inp.value=''
+  let pool=botReplies.default
+  if(q.includes('market'))pool=[...botReplies.marketing,...botReplies.default]
+  if(q.includes('fund')||q.includes('invest'))pool=[...botReplies.funding,...botReplies.default]
+  setTimeout(()=>{
+    typing.innerHTML=pool[Math.floor(Math.random()*pool.length)]
+    msgs.scrollTop=msgs.scrollHeight
+  },1500)
+}
+
+// ---- CONTACT FORM ----
+function submitForm(e){
+  e.preventDefault()
+  const msg=document.getElementById('formMsg')
+  msg.className='form-msg success';msg.style.display='block'
+  msg.textContent='✓ Message sent! Shubhajit will reply within 24 hours with personalized advice.'
+  document.getElementById('contactForm').reset()
+  setTimeout(()=>msg.style.display='none',6000)
+}
+
+// ---- INIT ----
+setTimeout(()=>{revealElements()},500)
+</script>
+</body>
+</html> 
